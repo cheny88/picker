@@ -183,15 +183,31 @@
     &-row {
       &:hover {
         .@{prefix-cls}-cell {
-          background: red;
+          background: #B8CBF5;
+          color: white;
         }
       }
 
-      &-selected {
-        .@{prefix-cls}-cell {
-          background: rgba(0, 0, 255, 0.3);
-        }
+      &-selected,
+      &-range-start,
+      &-range-end {
+        background: #1F59D6;
       }
+
+      &-in-range {
+        background: #e6f7ff
+      }
+
+      //&-range-hover,
+      //&-range-hover-start,
+      //&-range-hover-end {
+      //
+      //  background: #B8CBF5;
+      //  color: white !important;
+      //
+      //}
+
+
     }
 
     .@{prefix-cls}-cell,

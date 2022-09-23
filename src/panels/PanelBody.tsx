@@ -116,12 +116,15 @@ export default function PanelBody<DateType>({
       );
     }
 
-    rows.push(
-      <tr key={i} className={rowClassName && rowClassName(rowStartDate!)}>
-        {row}
-      </tr>,
-    );
-  }
+        rows.push(
+            // <tr key={i} className={prefixColumn && classNames(rowPrefixCls, {
+            //             ...getRowClassName(rowStartDate)
+            //         })}>
+            <tr key={i} className={rowClassName && rowClassName(rowStartDate!)}>
+                {row}
+            </tr>,
+        );
+    }
 
   return (
     <div className={`${prefixCls}-body`}>

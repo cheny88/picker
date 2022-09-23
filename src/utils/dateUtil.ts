@@ -156,6 +156,26 @@ export function isInRange<DateType>(
   );
 }
 
+export function isWeekInRange<DateType>(
+    generateConfig: GenerateConfig<DateType>,
+    locale: string,
+    startDate: NullableDateType<DateType>,
+    endDate: NullableDateType<DateType>,
+    current: NullableDateType<DateType>,
+) {
+    if (!startDate || !endDate || !current) {
+        return false;
+    }
+    if(locale){
+        const startWeek = generateConfig.locale.getWeek(locale, startDate)
+        const endWeek = generateConfig.locale.getWeek(locale, endDate)
+        const currentWeek = generateConfig.locale.getWeek(locale, current)
+        return (startWeek < currentWeek && endWeek > currentWeek)
+    }
+    return false
+
+}
+
 export function getWeekStartDate<DateType>(
   locale: string,
   generateConfig: GenerateConfig<DateType>,
